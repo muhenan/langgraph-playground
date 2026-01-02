@@ -73,6 +73,27 @@ def main():
     #    - 并不是每产生一条消息就写一次 IO，而是在每一个 "Superstep (超步)" 结束时写入。
     #    - 流程: Node 执行 -> 返回 Update -> Reducer 合并状态 (如 add_messages) -> Checkpointer.put 写入数据库。
     #    - 这确保了每一步执行后的状态都是可恢复的 (Time Travel 基础)。
+    # 
+    # ------------------------------------------
+    # 生产环境高并发架构思考 (10k+ QPS):
+    # 
+    # 简单的同步 DB 读写在高并发下会导致延迟增加和连接池耗尽。生产方案通常采用多级缓存架构：
+    # 
+    # A. 方案一：纯 Redis (如果数据量可控)
+    #    - 仅使用 Redis 存储 Checkpoint，放弃传统关系型数据库。速度极快，适合短期记忆。
+    #
+    # B. 方案二：冷热分离 + 异步落库 (Write-Behind Pattern)
+    #    - Hot Layer (Redis): Agent 运行时只读写 Redis，保证低延迟。
+    #    - Buffer Layer (MQ): 更新 Redis 同时发送消息到 Kafka/RabbitMQ。
+    #    - Cold Layer (DB/S3): Worker 异步消费 MQ，批量写入 Postgres 或 S3 永久存储。
+    #    - 优点: 用户侧无延迟感知，数据库压力被平滑削峰。
+    #
+    # C. 方案三：Sticky Sessions + 本地内存 (Stateful Actor)
+    #    - 终极高并发方案 (如游戏服/高频交易)。
+    #    - 路由: LB 根据 thread_id 哈希，确保同用户请求总是打到同一个 Pod。
+    #    - 内存: Agent 直接在进程内存中维护 State (0ms 读写)。
+    #    - 持久化: 仅在对话闲置或定时间隔时，异步 Snapshot 到数据库。
+    #    - 结合技术: Ray (Python 的分布式计算框架) 或 Orleans (Actor 模型)。
     # ==========================================
 
     builder = StateGraph(AgentState)
