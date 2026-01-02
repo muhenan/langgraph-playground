@@ -1,0 +1,155 @@
+[
+    {
+      "type": "HumanMessage",
+      "content": "你好，请问你是谁？",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    },
+    {
+      "type": "AIMessage",
+      "content": "你好！我是一个人工智能助手，旨在回答你的问题和提供帮助。请问有什么我可以为你做的？",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 27,
+          "prompt_tokens": 13,
+          "total_tokens": 40,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model_provider": "openai",
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "system_fingerprint": "fp_29330a9688",
+        "id": "chatcmpl-CtTPVB98TNzYEsC5e6wZr5rFgPOpx",
+        "service_tier": "default",
+        "finish_reason": "stop",
+        "logprobs": null
+      },
+      "id": "lc_run--019b7d80-7491-7da0-aff0-b56500df4c4e-0",
+      "usage_metadata": {
+        "input_tokens": 13,
+        "output_tokens": 27,
+        "total_tokens": 40,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    {
+      "type": "HumanMessage",
+      "content": "给我讲一个关于程序员的冷笑话。",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    },
+    {
+      "type": "AIMessage",
+      "content": "当然可以！这是一个关于程序员的冷笑话：\n\n为什么程序员总是混淆圣诞节和万圣节？\n\n因为 Oct 31 = Dec 25！\n\n（解释一下：在八进制（Octal）中，31等于十进制（Decimal）中的25。）",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 65,
+          "prompt_tokens": 60,
+          "total_tokens": 125,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model_provider": "openai",
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "system_fingerprint": "fp_29330a9688",
+        "id": "chatcmpl-CtTPWOt6e9tSyhprYL7dzAKjH0XKt",
+        "service_tier": "default",
+        "finish_reason": "stop",
+        "logprobs": null
+      },
+      "id": "lc_run--019b7d80-78e3-79d3-bc61-38615a05d70a-0",
+      "usage_metadata": {
+        "input_tokens": 60,
+        "output_tokens": 65,
+        "total_tokens": 125,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    },
+    {
+      "type": "HumanMessage",
+      "content": "刚才那个笑话里的'程序员'如果换成'AI'，笑点在哪里？",
+      "additional_kwargs": {},
+      "response_metadata": {}
+    },
+    {
+      "type": "AIMessage",
+      "content": "如果把笑话中的"程序员"换成"AI"，可以这样改编：\n\n为什么AI总是混淆圣诞节和万圣节？\n\n因为 Oct 31 = Dec 25！\n\n笑点依然在于八进制和十进制的转换，强调了AI在处理数字和编码时的逻辑性和准确性。虽然AI在很多方面都很聪明，但在这种特定的数字转换上，它可能会像程序员一样"混淆"！这也反映了AI在某些情况下可能会过于依赖逻辑，而忽视了人类的直觉和常识。",
+      "additional_kwargs": {
+        "refusal": null
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": 139,
+          "prompt_tokens": 154,
+          "total_tokens": 293,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model_provider": "openai",
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "system_fingerprint": "fp_29330a9688",
+        "id": "chatcmpl-CtTPZB1Z2yQTpeZ2WDYuUxJIq5LKv",
+        "service_tier": "default",
+        "finish_reason": "stop",
+        "logprobs": null
+      },
+      "id": "lc_run--019b7d80-804e-7b83-a553-1c590df0602d-0",
+      "usage_metadata": {
+        "input_tokens": 154,
+        "output_tokens": 139,
+        "total_tokens": 293,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      }
+    }
+  ]
