@@ -2,9 +2,9 @@
 # dependencies = ["langgraph"]
 # ///
 
-import os
 from typing import TypedDict, Literal
 from langgraph.graph import StateGraph, START, END
+from utils.visualizer import visualize_graph
 
 # ==========================================
 # 1. State (数据定义)
@@ -94,16 +94,7 @@ def main():
     graph = builder.compile()
 
     # --- B. 可视化 ---
-    try:
-        import os
-        os.makedirs("images", exist_ok=True)
-        png_data = graph.get_graph().draw_mermaid_png()
-        output_path = "images/02_graph_structure.png"
-        with open(output_path, "wb") as f:
-            f.write(png_data)
-        print(f"Graph image saved to '{output_path}'")
-    except Exception:
-        print("Skipping graph visualization (requires internet or extra deps)")
+    visualize_graph(graph, "02_graph_structure.png")
 
     # --- C. 运行测试 ---
     
