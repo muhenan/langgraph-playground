@@ -67,10 +67,10 @@ def main():
         print("Skipping graph visualization (requires internet or extra deps)")
 
     # --- C. 运行 ---
-    initial_input = {
+    initial_input = AgentState( {
         "sentence": "Hello LangGraph", 
         "processing_steps": []
-    }
+    })
     
     print(f"\n[Start] Input: {initial_input}")
     
