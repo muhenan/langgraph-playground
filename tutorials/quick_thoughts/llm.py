@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 初始化 LLM
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
 
 # 模拟多轮对话的历史记录
 messages = []

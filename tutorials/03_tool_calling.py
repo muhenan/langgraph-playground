@@ -30,7 +30,7 @@ def get_weather(city: str) -> str:
 tools = [multiply, get_weather]
 
 # 3. Nodes
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
 llm_with_tools = llm.bind_tools(tools)
 
 def agent_node(state: AgentState):
