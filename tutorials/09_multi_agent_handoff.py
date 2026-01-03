@@ -25,6 +25,10 @@ from utils.visualizer import visualize_graph
 
 load_dotenv()
 
+"""
+Handoff (接力)
+"""
+
 # ==========================================
 # 1. State Definitions
 # ==========================================
@@ -168,6 +172,8 @@ def main():
     2. 周围是 Agents (Triage, Tech, Sales...)。
     3. Edge: 只有 START -> Router 这一条显式的边。
     4. Jumps: 所有的 Agent 都可以通过 Command 任意跳到其他 Agent（网状跳转），而不需要在图里画几十条线。
+
+    这就是构建 OpenAI Swarm 风格多智能体系统的标准范式！
     
     法则 2：命令式跳转 (Command-based Handoff)
     问： "节点之间不用条件边，而是直接用 command goto 跳转？"
