@@ -185,6 +185,20 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "langgraph" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b1/12/3a74c22abdfddd877dfc2ee666d516f9132877fcd25eb4dd694835c59c79/langchain-1.2.0.tar.gz", hash = "sha256:a087d1e2b2969819e29a91a6d5f98302aafe31bd49ba377ecee3bf5a5dcfe14a", size = 536126, upload-time = "2025-12-15T14:51:42.24Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/23/00/4e3fa0d90f5a5c376ccb8ca983d0f0f7287783dfac48702e18f01d24673b/langchain-1.2.0-py3-none-any.whl", hash = "sha256:82f0d17aa4fbb11560b30e1e7d4aeb75e3ad71ce09b85c90ab208b181a24ffac", size = 102828, upload-time = "2025-12-15T14:51:40.802Z" },
+]
+
+[[package]]
 name = "langchain-core"
 version = "1.2.5"
 source = { registry = "https://pypi.org/simple" }
@@ -266,6 +280,7 @@ name = "langgraph-playground"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "langchain" },
     { name = "langchain-core" },
     { name = "langchain-openai" },
     { name = "langgraph" },
@@ -276,6 +291,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "langchain", specifier = ">=1.2.0" },
     { name = "langchain-core", specifier = ">=1.2.5" },
     { name = "langchain-openai", specifier = ">=1.1.6" },
     { name = "langgraph", specifier = ">=1.0.5" },
