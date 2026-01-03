@@ -35,7 +35,7 @@ class AgentState(TypedDict):
 # ==========================================
 # 2. The Supervisor (The Brain)
 # ==========================================
-llm_supervisor = ChatOpenAI(model="gpt-4o", temperature=0)
+llm_supervisor = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
 
 # 定义 Supervisor 的可选输出
 # 这就是"路由表"，LLM 必须从中选一个
