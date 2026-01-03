@@ -43,6 +43,7 @@ tools = [buy_stock]
 llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
 llm_with_tools = llm.bind_tools(tools)
 
+# 这里 llm 会看到整个对话历史，包括工具调用和人类干预。
 def agent_node(state: AgentState):
     return {"messages": [llm_with_tools.invoke(state["messages"])]}
 
